@@ -31,7 +31,7 @@ export default function SideBar({ sideBar, setClickMenu, clickMenu, mode }) {
             clickMenu === "Home" &&
             `${mode === "Dark" ? "bg-slate-700 rounded-md" : "bg-gray-300"}`
           } w-full p-3 hover:bg-gray-300 hover:rounded-md`}
-          to={"/home"}
+          to={"/"}
         >
           Home
         </NavLink>
