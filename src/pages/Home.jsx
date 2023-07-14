@@ -33,7 +33,7 @@ export default function Home() {
   const [mode, setMode] = useOutletContext();
   return (
     <main
-      className={`flex flex-col justify-center gap-16 px-10 py-14 text-gray-700 ${
+      className={`flex flex-col justify-center gap-16 px-10 py-14 ${
         mode === "Dark" && "bg-slate-800 text-gray-300"
       }`}
     >
