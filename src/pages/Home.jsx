@@ -38,7 +38,7 @@ export default function Home() {
       className={`flex flex-col justify-center gap-16 px-10 py-14 ${
         mode === "Dark" && "bg-slate-700 text-gray-300"
       }`}
-      onClick={() => setSideBar(!sideBar)}
+      onClick={() => {if(sideBar === false){setSideBar(true)}}}
     >
       <select
         className={`${
