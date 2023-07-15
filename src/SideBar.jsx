@@ -30,7 +30,7 @@ export default function SideBar({ sideBar, setClickMenu, clickMenu, mode }) {
           className={`${
             clickMenu === "Home" &&
             `${mode === "Dark" ? "bg-slate-700 rounded-md" : "bg-gray-300"}`
-          } w-full p-3 hover:bg-gray-300 hover:rounded-md`}
+          } w-full p-3 hover:bg-gray-300 hover:rounded-md ${mode === "Dark" && 'hover:bg-slate-800'}`}
           to={"/"}
         >
           Home
@@ -40,7 +40,7 @@ export default function SideBar({ sideBar, setClickMenu, clickMenu, mode }) {
           className={`${
             clickMenu === "Project" &&
             `${mode === "Dark" ? "bg-slate-700 rounded-md" : "bg-gray-300"}`
-          } w-full p-3 hover:bg-gray-300 hover:rounded-md`}
+          } w-full p-3 hover:bg-gray-300 hover:rounded-md ${mode === "Dark" && 'hover:bg-slate-800'}`}
           to={"/project"}
         >
           Project
@@ -50,7 +50,7 @@ export default function SideBar({ sideBar, setClickMenu, clickMenu, mode }) {
           className={`${
             clickMenu === "Cv" &&
             `${mode === "Dark" ? "bg-slate-700 rounded-md" : "bg-gray-300"}`
-          } w-full p-3 hover:bg-gray-300 hover:rounded-md`}
+          } w-full p-3 hover:bg-gray-300 hover:rounded-md ${mode === "Dark" && 'hover:bg-slate-800'}`}
           to={"/cv"}
         >
           Curiculum Vitae
@@ -59,7 +59,7 @@ export default function SideBar({ sideBar, setClickMenu, clickMenu, mode }) {
           className={`${
             clickMenu === "Contact" &&
             `${mode === "Dark" ? "bg-slate-700 rounded-md" : "bg-gray-300"}`
-          } w-full p-3 hover:bg-gray-300 hover:rounded-md`}
+          } w-full p-3 hover:bg-gray-300 hover:rounded-md ${mode === "Dark" && 'hover:bg-slate-800'}`}
           to={"mailto:andriansyah0430@gmail.com"}
         >
           Contact
@@ -72,31 +72,31 @@ export default function SideBar({ sideBar, setClickMenu, clickMenu, mode }) {
       >
         <a
           href="https://github.com/Andri0430"
-          className={`${mode === "Dark" && "bg-gray-800"} text-[26px]`}
+          className={`text-[26px]`}
         >
           <AiFillGithub />
         </a>
         <a
           href="#"
-          className={`${mode === "Dark" && "bg-gray-800"} text-[26px]`}
+          className={`text-[26px]`}
         >
           <AiFillFacebook />
         </a>
         <a
           href="#"
-          className={`${mode === "Dark" && "bg-gray-800"} text-[26px]`}
+          className={`text-[26px]`}
         >
           <AiFillInstagram />
         </a>
         <a
           href="#"
-          className={`${mode === "Dark" && "bg-gray-800"} text-[26px]`}
+          className={`text-[26px]`}
         >
           <AiFillLinkedin />
         </a>
         <a
           href="#"
-          className={`${mode === "Dark" && "bg-gray-800"} text-[26px]`}
+          className={`text-[26px]`}
         >
           <AiFillTwitterCircle />
         </a>

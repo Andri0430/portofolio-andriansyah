@@ -1,16 +1,16 @@
-export default function Footer({ mode, setMode }) {
+import {AiOutlineCopyrightCircle} from "react-icons/ai"
+export default function Footer({ mode, setSideBar, sideBar }) {
   return (
     <footer
-      className={`flex justify-center ${mode === "Dark" && "bg-slate-800"}`}
+      className={`${mode === "Dark" ? 'bg-slate-800' : 'bg-gray-200'} flex flex-col items-center p-2 gap-1 justify-center`}
+      onClick={() => setSideBar(!sideBar)}
     >
-      <div
-        className={`flex flex-col items-center gap-2 p-5 text-gray-700 border-t-2 w-[85%] ${
-          mode === "Dark" && "text-gray-100"
-        }`}
-      >
-        <p>2023 Andriansyah</p>
-        <p>Website Portofolio Andriansyah</p>
-      </div>
+      <p className={`${mode === "Dark" && "text-gray-300"} text-gray-500 flex items-center`}>
+        <AiOutlineCopyrightCircle/>Copyright by Andri 2023
+      </p>
+      <p className={`${mode === "Dark" && "text-gray-300"} text-gray-500`}>
+        Website Portofolio Andriansyah
+      </p>
     </footer>
   );
 }

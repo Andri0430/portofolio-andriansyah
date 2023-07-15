@@ -26,8 +26,8 @@ export default function App() {
           setMode={setMode}
         />
         <div className="flex-col">
-          <Outlet context={[mode,setMode]} />
-          <Footer mode={mode} setMode={setMode}/>
+          <Outlet context={[mode,setMode,sideBar,setSideBar,clickMenu,setClickMenu]} />
+          <Footer mode={mode} setMode={setMode} sideBar={sideBar} setSideBar={setSideBar}/>
         </div>
       </div>
     </>
