@@ -6,7 +6,11 @@ export default function Header({ mode, setMode, setSideBar, sideBar }) {
       className={`flex justify-between items-center py-2 px-7 sticky top-0 font-bold bg-gray-100 md:p-5 lg:flex-row lg:justify-end lg:p-2 lg:absolute ${
         mode === "Dark" && "bg-slate-800"
       }`}
-      onClick={() => setSideBar(!sideBar)}
+      onClick={() => {
+        if (sideBar === false) {
+          setSideBar(true);
+        }
+      }}
     >
       <button
         onClick={(e) => {

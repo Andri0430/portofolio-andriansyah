@@ -3,7 +3,7 @@ export default function Footer({ mode, setSideBar, sideBar }) {
   return (
     <footer
       className={`${mode === "Dark" ? 'bg-slate-800' : 'bg-gray-200'} flex flex-col items-center p-2 gap-1 justify-center`}
-      onClick={() => setSideBar(!sideBar)}
+      onClick={() => {if(sideBar === false){setSideBar(true)}}}
     >
       <p className={`${mode === "Dark" && "text-gray-300"} text-gray-500 flex items-center`}>
         <AiOutlineCopyrightCircle/>Copyright by Andri 2023
