@@ -3,16 +3,25 @@ import Header from "./Header";
 import { useState } from "react";
 import Footer from "./Footer";
 import SideBar from "./SideBar";
+import { createContext } from "react";
+
+export const ThemeContext = createContext({
+  theme: null,
+  setTheme: () => {},
+  clickMode: null,
+  setClickMode: () => {},
+});
 
 export default function App() {
-  const [mode, setMode] = useState("Light");
+  const [theme, setTheme] = useState("Light");
+  const [clickMode, setClickMode] = useState(false);
   const [sideBar, setSideBar] = useState(true);
   const [clickMenu, setClickMenu] = useState("Home");
   return (
-    <>
+    <ThemeContext.Provider value={{ theme, setTheme, clickMode, setClickMode }}>
       <Header
-        mode={mode}
-        setMode={setMode}
+        theme={theme}
+        setTheme={setTheme}
         sideBar={sideBar}
         setSideBar={setSideBar}
       />
@@ -22,14 +31,35 @@ export default function App() {
           setSideBar={setSideBar}
           clickMenu={clickMenu}
           setClickMenu={setClickMenu}
-          mode={mode}
-          setMode={setMode}
+          theme={theme}
+          setTheme={setTheme}
         />
-        <div className="flex-col">
-          <Outlet context={[mode,setMode,sideBar,setSideBar,clickMenu,setClickMenu]} />
-          <Footer mode={mode} setMode={setMode} sideBar={sideBar} setSideBar={setSideBar}/>
+        <div
+          className="flex-col"
+          onClick={() => {
+            if (sideBar === false) {
+              setSideBar(true);
+            }
+          }}
+        >
+          <Outlet
+            context={[
+              theme,
+              setTheme,
+              sideBar,
+              setSideBar,
+              clickMenu,
+              setClickMenu,
+            ]}
+          />
+          <Footer
+            theme={theme}
+            setTheme={setTheme}
+            sideBar={sideBar}
+            setSideBar={setSideBar}
+          />
         </div>
       </div>
-    </>
+    </ThemeContext.Provider>
   );
 }

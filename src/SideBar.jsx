@@ -7,13 +7,13 @@ import {
   AiFillTwitterCircle,
 } from "react-icons/ai";
 
-export default function SideBar({ sideBar, setClickMenu, clickMenu, mode }) {
+export default function SideBar({ sideBar, setClickMenu, clickMenu, theme }) {
   return (
     <section
       className={`${
         sideBar && `-translate-x-full`
       } flex flex-col items-center justify-around bg-gray-100 px-4 gap-2 h-screen fixed left-0 text-gray-950 transition-all lg:translate-x-0 lg:sticky lg:top-0 ${
-        mode === "Dark" && "bg-slate-900"
+        theme === "Dark" && "bg-slate-900"
       }`}
     >
       <img
@@ -22,15 +22,15 @@ export default function SideBar({ sideBar, setClickMenu, clickMenu, mode }) {
       />
       <div
         className={`flex flex-col w-[274px] ${
-          mode === "Dark" && "text-gray-200"
+          theme === "Dark" && "text-gray-200"
         }`}
       >
         <NavLink
           onClick={() => setClickMenu("Home")}
           className={`${
             clickMenu === "Home" &&
-            `${mode === "Dark" ? "bg-slate-700 rounded-md" : "bg-gray-300"}`
-          } w-full p-3 hover:bg-gray-300 hover:rounded-md ${mode === "Dark" && 'hover:bg-slate-800'}`}
+            `${theme === "Dark" ? "bg-slate-700 rounded-md" : "bg-gray-300"}`
+          } w-full p-3 hover:bg-gray-300 hover:rounded-md ${theme === "Dark" && 'hover:bg-slate-800'}`}
           to={"/"}
         >
           Home
@@ -39,8 +39,8 @@ export default function SideBar({ sideBar, setClickMenu, clickMenu, mode }) {
           onClick={() => setClickMenu("Project")}
           className={`${
             clickMenu === "Project" &&
-            `${mode === "Dark" ? "bg-slate-700 rounded-md" : "bg-gray-300"}`
-          } w-full p-3 hover:bg-gray-300 hover:rounded-md ${mode === "Dark" && 'hover:bg-slate-800'}`}
+            `${theme === "Dark" ? "bg-slate-700 rounded-md" : "bg-gray-300"}`
+          } w-full p-3 hover:bg-gray-300 hover:rounded-md ${theme === "Dark" && 'hover:bg-slate-800'}`}
           to={"/project"}
         >
           Project
@@ -49,8 +49,8 @@ export default function SideBar({ sideBar, setClickMenu, clickMenu, mode }) {
           onClick={() => setClickMenu("Cv")}
           className={`${
             clickMenu === "Cv" &&
-            `${mode === "Dark" ? "bg-slate-700 rounded-md" : "bg-gray-300"}`
-          } w-full p-3 hover:bg-gray-300 hover:rounded-md ${mode === "Dark" && 'hover:bg-slate-800'}`}
+            `${theme === "Dark" ? "bg-slate-700 rounded-md" : "bg-gray-300"}`
+          } w-full p-3 hover:bg-gray-300 hover:rounded-md ${theme === "Dark" && 'hover:bg-slate-800'}`}
           to={"/cv"}
         >
           Curiculum Vitae
@@ -58,8 +58,8 @@ export default function SideBar({ sideBar, setClickMenu, clickMenu, mode }) {
         <NavLink
           className={`${
             clickMenu === "Contact" &&
-            `${mode === "Dark" ? "bg-slate-700 rounded-md" : "bg-gray-300"}`
-          } w-full p-3 hover:bg-gray-300 hover:rounded-md ${mode === "Dark" && 'hover:bg-slate-800'}`}
+            `${theme === "Dark" ? "bg-slate-700 rounded-md" : "bg-gray-300"}`
+          } w-full p-3 hover:bg-gray-300 hover:rounded-md ${theme === "Dark" && 'hover:bg-slate-800'}`}
           to={"mailto:andriansyah0430@gmail.com"}
         >
           Contact
@@ -67,7 +67,7 @@ export default function SideBar({ sideBar, setClickMenu, clickMenu, mode }) {
       </div>
       <div
         className={`flex gap-6 justify-evenly w-full items-center ${
-          mode === "Dark" && "text-gray-200"
+          theme === "Dark" && "text-gray-200"
         }`}
       >
         <a

@@ -1,10 +1,14 @@
 import { GiHamburgerMenu } from "react-icons/gi";
+import ThemeButton from "./components/ThemeButton";
+import { useContext } from "react";
+import { ThemeContext } from "./App";
 
-export default function Header({ mode, setMode, setSideBar, sideBar }) {
+export default function Header({ setSideBar, sideBar }) {
+  const { theme} = useContext(ThemeContext);
   return (
     <header
       className={`flex justify-between items-center py-2 px-7 sticky top-0 font-bold bg-gray-100 md:p-5 lg:flex-row lg:justify-end lg:p-2 lg:absolute ${
-        mode === "Dark" && "bg-slate-800"
+        theme === "Dark" && "bg-slate-800"
       }`}
       onClick={() => {
         if (sideBar === false) {
@@ -17,21 +21,11 @@ export default function Header({ mode, setMode, setSideBar, sideBar }) {
           e.preventDefault();
           setSideBar(!sideBar);
         }}
-        className={`text-xl lg:hidden ${mode === "Dark" && "text-gray-300"}`}
+        className={`text-xl lg:hidden ${theme === "Dark" && "text-gray-300"}`}
       >
         <GiHamburgerMenu />
       </button>
-      <select
-        value={mode}
-        onChange={(e) => {
-          setMode(e.target.value);
-          console.log(mode);
-        }}
-        className="p-1 items-center text-gray-800 border-2 rounded-md hover:bg-slate-500 hover:text-gray-100 cursor-pointer md:text-2xl"
-      >
-        <option value="Light">Light</option>
-        <option value="Dark">Dark</option>
-      </select>
+      <ThemeButton onClick={''}/>
     </header>
   );
 }

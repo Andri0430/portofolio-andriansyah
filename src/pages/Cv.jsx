@@ -1,21 +1,23 @@
+import { useContext } from "react";
 import { useOutletContext } from "react-router-dom";
+import { ThemeContext } from "../App";
+import ThemeButton from "../components/ThemeButton";
 
 export default function Cv() {
-  const [mode, setMode, sideBar, setSideBar] = useOutletContext();
+  const [sideBar, setSideBar] = useOutletContext();
+  const { theme } = useContext(ThemeContext);
   return (
     <main
       className={`flex flex-col justify-center gap-8 px-10 py-14 ${
-        mode === "Dark" && "bg-slate-700 text-gray-300"
+        theme === "Dark" && "bg-slate-700 text-gray-300"
       }`}
       onClick={() => {if(sideBar === false){setSideBar(true)}}}
     >
-      <select
-        className="p-1 hidden fixed top-2 right-10 items-center text-gray-800 border-2 rounded-md hover:bg-slate-500 hover:text-gray-100 cursor-pointer lg:flex"
-        onChange={(e) => setMode(e.target.value)}
-      >
-        <option value="Light">Light</option>
-        <option value="Dark">Dark</option>
-      </select>
+      <div className={`${
+          theme === "Dark" && "bg-slate-600"
+        } text-2xl p-1 hidden fixed top-2 right-10 items-center border-2 rounded-md cursor-pointer lg:flex`}>
+      <ThemeButton/>
+      </div>
       <div className="flex flex-col gap-1 text-justify">
         <h2 className="text-2xl font-bold">Profile</h2>
         <p className="text-sm">
