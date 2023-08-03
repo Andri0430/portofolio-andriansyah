@@ -4,6 +4,9 @@ import { useState } from "react";
 import Footer from "./Footer";
 import SideBar from "./SideBar";
 import { createContext } from "react";
+import { useRef } from "react";
+import ButtonScroll from "./components/ButtonScroll";
+import { useEffect } from "react";
 
 export const ThemeContext = createContext({
   theme: null,
@@ -17,6 +20,11 @@ export default function App() {
   const [clickMode, setClickMode] = useState(false);
   const [sideBar, setSideBar] = useState(true);
   const [clickMenu, setClickMenu] = useState("Home");
+  const containerRef = useRef(null);
+
+  useEffect(() => {
+    theme === "Dark" ? console.log("Mode Gelap") : console.log("Mode Terang");
+  }, [theme]);
   return (
     <ThemeContext.Provider value={{ theme, setTheme, clickMode, setClickMode }}>
       <Header
@@ -25,7 +33,7 @@ export default function App() {
         sideBar={sideBar}
         setSideBar={setSideBar}
       />
-      <div className="flex">
+      <div className="flex" ref={containerRef}>
         <SideBar
           sideBar={sideBar}
           setSideBar={setSideBar}
@@ -35,7 +43,9 @@ export default function App() {
           setTheme={setTheme}
         />
         <div
-          className="flex-col"
+          className={`${
+            theme == "Dark" && "bg-slate-700"
+          } flex flex-col items-center`}
           onClick={() => {
             if (sideBar === false) {
               setSideBar(true);
@@ -51,6 +61,11 @@ export default function App() {
               clickMenu,
               setClickMenu,
             ]}
+          />
+          <ButtonScroll
+            onClick={() =>
+              containerRef.current.scrollIntoView({ behavior: "smooth" })
+            }
           />
           <Footer
             theme={theme}

@@ -4,7 +4,7 @@ import { useContext } from "react";
 import { ThemeContext } from "./App";
 
 export default function Header({ setSideBar, sideBar }) {
-  const { theme} = useContext(ThemeContext);
+  const { theme } = useContext(ThemeContext);
   return (
     <header
       className={`flex justify-between items-center py-2 px-7 sticky top-0 font-bold bg-gray-100 md:p-5 lg:flex-row lg:justify-end lg:p-2 lg:absolute ${
@@ -25,7 +25,7 @@ export default function Header({ setSideBar, sideBar }) {
       >
         <GiHamburgerMenu />
       </button>
-      <ThemeButton onClick={''}/>
+      <ThemeButton onClick={""} />
     </header>
   );
 }

@@ -30,7 +30,9 @@ export default function SideBar({ sideBar, setClickMenu, clickMenu, theme }) {
           className={`${
             clickMenu === "Home" &&
             `${theme === "Dark" ? "bg-slate-700 rounded-md" : "bg-gray-300"}`
-          } w-full p-3 hover:bg-gray-300 hover:rounded-md ${theme === "Dark" && 'hover:bg-slate-800'}`}
+          } w-full p-3 hover:bg-gray-300 hover:rounded-md ${
+            theme === "Dark" && "hover:bg-slate-800"
+          }`}
           to={"/"}
         >
           Home
@@ -40,7 +42,9 @@ export default function SideBar({ sideBar, setClickMenu, clickMenu, theme }) {
           className={`${
             clickMenu === "Project" &&
             `${theme === "Dark" ? "bg-slate-700 rounded-md" : "bg-gray-300"}`
-          } w-full p-3 hover:bg-gray-300 hover:rounded-md ${theme === "Dark" && 'hover:bg-slate-800'}`}
+          } w-full p-3 hover:bg-gray-300 hover:rounded-md ${
+            theme === "Dark" && "hover:bg-slate-800"
+          }`}
           to={"/project"}
         >
           Project
@@ -50,7 +54,9 @@ export default function SideBar({ sideBar, setClickMenu, clickMenu, theme }) {
           className={`${
             clickMenu === "Cv" &&
             `${theme === "Dark" ? "bg-slate-700 rounded-md" : "bg-gray-300"}`
-          } w-full p-3 hover:bg-gray-300 hover:rounded-md ${theme === "Dark" && 'hover:bg-slate-800'}`}
+          } w-full p-3 hover:bg-gray-300 hover:rounded-md ${
+            theme === "Dark" && "hover:bg-slate-800"
+          }`}
           to={"/cv"}
         >
           Curiculum Vitae
@@ -59,7 +65,9 @@ export default function SideBar({ sideBar, setClickMenu, clickMenu, theme }) {
           className={`${
             clickMenu === "Contact" &&
             `${theme === "Dark" ? "bg-slate-700 rounded-md" : "bg-gray-300"}`
-          } w-full p-3 hover:bg-gray-300 hover:rounded-md ${theme === "Dark" && 'hover:bg-slate-800'}`}
+          } w-full p-3 hover:bg-gray-300 hover:rounded-md ${
+            theme === "Dark" && "hover:bg-slate-800"
+          }`}
           to={"mailto:andriansyah0430@gmail.com"}
         >
           Contact
@@ -70,34 +78,19 @@ export default function SideBar({ sideBar, setClickMenu, clickMenu, theme }) {
           theme === "Dark" && "text-gray-200"
         }`}
       >
-        <a
-          href="https://github.com/Andri0430"
-          className={`text-[26px]`}
-        >
+        <a href="https://github.com/Andri0430" className={`text-[26px]`}>
           <AiFillGithub />
         </a>
-        <a
-          href="#"
-          className={`text-[26px]`}
-        >
+        <a href="#" className={`text-[26px]`}>
           <AiFillFacebook />
         </a>
-        <a
-          href="#"
-          className={`text-[26px]`}
-        >
+        <a href="#" className={`text-[26px]`}>
           <AiFillInstagram />
         </a>
-        <a
-          href="#"
-          className={`text-[26px]`}
-        >
+        <a href="#" className={`text-[26px]`}>
           <AiFillLinkedin />
         </a>
-        <a
-          href="#"
-          className={`text-[26px]`}
-        >
+        <a href="#" className={`text-[26px]`}>
           <AiFillTwitterCircle />
         </a>
       </div>
